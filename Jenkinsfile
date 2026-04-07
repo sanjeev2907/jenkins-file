@@ -2,15 +2,10 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Run Script') {
             steps {
-                echo "Building the server"
-            }
-        }
-
-        stage('Test') {
-            steps {
-                echo "Testing the server"
+                sh 'chmod +x script.sh'
+                sh './script.sh'
             }
         }
     }
